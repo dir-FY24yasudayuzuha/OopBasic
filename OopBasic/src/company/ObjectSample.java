@@ -12,6 +12,7 @@ public class ObjectSample {
         // インスタンスメソッドの呼び出し
         employee.report();
         employee.report(2);
+        //public void report(int times) { 
         employee.joinMeeting();
         
         // 一行開ける
@@ -19,11 +20,24 @@ public class ObjectSample {
         
         // インスタンス（クラスの具現化）の作成
         var devDepartment = new Department("開発部", "yy", 0);
-        var engineer = new Employee("佐々木", devDepartment, "一般社員", 172);
+        var engineer = new Engineer("佐々木", devDepartment, "一般社員", 172, "Java");
         
         engineer.report();
-        engineer.report(2);
         engineer.joinMeeting();
+        engineer.developSoftware();
+        
+        // polymorphism kakunin
+        Employee projectManager = new Engineer("中村", devDepartment, "PM", 99, "Java");
+        
+        // instance method yobidashi
+        projectManager.report(); 
+        //Employee の[public void report(int times) {]でこの書き方が定義
+        projectManager.joinMeeting();
+        if (projectManager instanceof Engineer) {
+            //developsoftware yobidashi
+            ((Engineer) projectManager).developSoftware();
+            
+        }
     }
 
 }
