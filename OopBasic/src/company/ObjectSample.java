@@ -23,8 +23,8 @@ public class ObjectSample {
         
         // インスタンス（クラスの具現化）の作成
         var devDepartment = new Department("開発部", "yy", 0);
-        // var engineer = new Engineer("佐々木", devDepartment, "一般社員", 172, "Java");
-        Engineer engineer = new Engineer("佐々木", devDepartment, "一般社員", 172, "Java");
+        var engineer = new Engineer("佐々木", devDepartment, "一般社員", 172, "Java");
+        // Engineer engineer = new Engineer("佐々木", devDepartment, "一般社員", 172, "Java");
         
         // instance method call
         engineer.report();
